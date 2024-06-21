@@ -3,11 +3,11 @@ name: Check Prettier
 on: [pull_request]
 
 jobs:
-    chequear:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Enviar Archivos
-              uses: actions/checkout@v4
-              
-            - name: Correr Prettier Check
-              run: npx prettier . --check
+  chequear:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar Archivos
+        uses: actions/checkout@v4
+
+      - name: Correr Prettier Check
+        run: npx prettier . --check
