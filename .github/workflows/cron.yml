@@ -1,0 +1,14 @@
+name: Ejecución Automática
+
+on:
+  schedule:
+    #- cron: "0 0 1 * *" #A las 00 el primer día del mes
+    - cron: "*/5 * * * *" #Cada 5 minutos
+
+jobs:
+  mensajeAutomatico:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Decir Dia la Hora
+        run: echo "La fexcha y hora actual es $(date)"
