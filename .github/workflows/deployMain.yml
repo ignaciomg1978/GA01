@@ -1,4 +1,8 @@
 name: Deploy to Vercel
+#Varialbes de entorno locales
+env:
+  VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
+  VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
 
 on:
   push:
@@ -16,5 +20,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Mensaje
-        run: echo "HOLA MUNDO"
+      - name: Instalación Vercel
+        run: npm install --global vercel
+
+      - name: Pull a Vercel
+        run: vercel pull --yes --environment=production --token=${{secrets.VERCEL_TOKEN}}
+
+      - name: Build en Vercel
+        run: vercel build --prod --token=${{secrets.VERCEL_TOKEN}}
+
+      - name: Deploy Project
+        run: vercel deploy --prebuild --prod --token=${{secrets.VERCEL_TOKEN}}
