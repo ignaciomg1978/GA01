@@ -17,5 +17,6 @@ jobs:
       - name: Instalamos dependencias
         run: npm i
 
+      #Prettier es un validador de código. Se podría pasar también sonarLint, test unitarios etc
       - name: Correr Prettier Check
         run: npx prettier . --check
