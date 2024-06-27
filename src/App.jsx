@@ -23,9 +23,7 @@ function App() {
         </button>
         <p>Creado durante curso GA01</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more.
-      </p>
+      <p className="read-the-docs">Click en los logos de Vite y React.</p>
     </>
   );
 }
